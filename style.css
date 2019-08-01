@@ -1,13 +1,12 @@
 a {
     text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: black;
 }
 
 #list {
+    background: #273c75;
+}
+
+.bg-list {
     background: #273c75;
 }
 
@@ -17,4 +16,12 @@ a:hover {
     bottom: 0;
     width: 100%;
     color: white;
+}
+
+.active {
+    background-color: black;
+}
+
+.card {
+    border: none;
 }

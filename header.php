@@ -1,3 +1,5 @@
+<?php include('config.php') ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,34 +11,33 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- css -->
+    <!-- custom css -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="list">
-    
-<nav class="navbar navbar-expand-lg">
+
+<nav class="navbar navbar-expand-lg pt-4 pb-4">
     <a class="navbar-brand" href="index.php">Lyrics</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
+    <ul class="navbar-nav mr-auto">
+            <li class="nav-item rounded <?php if ($page == 'artist') {echo 'bg-dark';} ?>">
                 <a class="nav-link" href="list-artist.php">Artist</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="list-album.php">Album</a>
+            <li class="nav-item rounded <?php if ($page == 'genre') {echo 'bg-dark';} ?>">
+                <a class="nav-link" href="list-genre.php">Genre</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item rounded <?php if ($page == 'song') {echo 'bg-dark';} ?>">
                 <a class="nav-link" href="list-song.php">Song</a>
             </li>
         </ul>
-
         <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" type="text" placeholder="Lagu,artis,genre" aria-label="Search">
+        <button class="btn alert-primary my-2 my-sm-0" type="submit">Cari</button>
         </form>
-    </div>
-</nav>
+</div>
+</nav> <br>
