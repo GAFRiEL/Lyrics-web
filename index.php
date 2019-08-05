@@ -1,6 +1,7 @@
 <?php 
+$home = 'home';
 $page = 'home';
-include('main_header.php');
+include('header.php');
 ?>
 
 <main class="py-4">

@@ -1,4 +1,5 @@
 <?php 
+$home = 'page';
 $page = 'genre';
 include('header.php') ?>
 <br>

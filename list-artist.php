@@ -1,16 +1,20 @@
 <?php 
+$home = 'page';
 $page = 'artist';
-include('header.php') ?>
+include('header.php'); ?>
 <br>
 <br>
 
 <div class="container">
+
     <h1>Artist List</h1>
     
     <div class="row justify-content-center">
 
         <?php
-            $sql    = "SELECT * FROM artist";
+            $sql    =  "SELECT *
+                        FROM artist
+                        ORDER BY name ASC";
             $query  = mysqli_query($db, $sql);
 
             while($artist = mysqli_fetch_array($query)){
@@ -24,7 +28,7 @@ include('header.php') ?>
                                         </h5>
                                     </div>
                                 </div>
-                                <a href="read-artist.php?id='.$artist['id'].'" class="btn btn-primary rounded-0">
+                                <a href="read-artist.php?id='.$artist['artist_id'].'" class="btn btn-primary shadow rounded-0">
                                     Lihat
                                 </a>
                             </div>

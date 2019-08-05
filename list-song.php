@@ -1,4 +1,5 @@
 <?php 
+$home = 'page';
 $page = 'song';
 include('header.php') ?>
 <br>
@@ -11,12 +12,11 @@ include('header.php') ?>
         <tbody> 
         
             <?php
-                $sql    =  "SELECT artist.id, artist.name, genre.id, genre.genre, album.id, album.judul, song.id, song.title, song.artist_id, song.album_id
-                            FROM song, artist, genre, album
-                            WHERE artist.id=song.artist_id
-                            AND genre.id=song.genre_id
-                            AND album.id=song.album_id
-                            ORDER BY title ASC";
+                $sql    =  "SELECT artist.artist_id, artist.name, genre.genre_id, genre.genre, album.album_id, album.judul, song.id, song.title, song.lyrics, song.artist_id, song.album_id
+                            FROM song
+                            LEFT JOIN artist ON song.artist_id = artist.artist_id
+                            LEFT JOIN album ON song.album_id = album.album_id
+                            LEFT JOIN genre ON song.genre_id = genre.genre_id";
                 $query  = mysqli_query($db, $sql);
                 $no     = 1;
 
@@ -26,7 +26,7 @@ include('header.php') ?>
                         echo '<td><h3>'.$no.'</h3></td>';
                         echo '<td class="">
                                 <h3>
-                                    <a class="text-white" href="read-song.php?id='.$song['id'].'">
+                                    <a class="text-dark" href="read-song.php?id='.$song['id'].'">
                                         '.$song['title'].'
                                     </a>
                                 </h3>
@@ -36,7 +36,7 @@ include('header.php') ?>
                               </td>';
                         echo '<td class="">
                                 <h3>
-                                    <a class="text-white" href="#">
+                                    <a class="text-dark" href="#">
                                         '.$song['name'].'
                                     </a>
                                 </h3>
@@ -58,3 +58,10 @@ include('header.php') ?>
 </div>
 
 <?php include('main_footer.php') ?>
+
+<!-- 
+    SELECT a.field, b.field, c.field 
+    FROM aaa AS a 
+    INNER JOIN bbb AS b ON b.id = a.b_id 
+    INNER JOIN ccc AS c ON c.id = a.c_id 
+-->

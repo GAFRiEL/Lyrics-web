@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="shortcut icon" href="asset/title-logo.png" type="image/x-icon">
     <title>Lyrics | Web</title>
 
     <!-- Bootstrap -->
@@ -15,29 +17,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body id="list">
+<body class="alert-primary">
 
-<nav class="navbar navbar-expand-lg pt-4 pb-4">
-    <a class="navbar-brand" href="index.php">Lyrics</a>
+<nav class="navbar navbar-expand-lg pt-4 pb-4 bg-primary">
+    <a class="navbar-brand" href="index.php">
+        <img src="asset/Cropped.png" class="" style="width: 150px;">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-            <li class="nav-item rounded <?php if ($page == 'artist') {echo 'bg-dark';} ?>">
-                <a class="nav-link" href="list-artist.php">Artist</a>
-            </li>
-            <li class="nav-item rounded <?php if ($page == 'genre') {echo 'bg-dark';} ?>">
-                <a class="nav-link" href="list-genre.php">Genre</a>
-            </li>
-            <li class="nav-item rounded <?php if ($page == 'song') {echo 'bg-dark';} ?>">
-                <a class="nav-link" href="list-song.php">Song</a>
-            </li>
-        </ul>
+
+    <?php
+
+        if ($home == 'page') {
+            echo '
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item rounded '.(($page == 'artist')?'alert-primary':"").'">
+                        <a class="nav-link text-dark" href="list-artist.php">Artist</a>
+                    </li>
+                    <li class="nav-item rounded '.(($page == 'genre')?'alert-primary':"").'">
+                        <a class="nav-link text-dark" href="list-genre.php">Genre</a>
+                    </li>
+                    <li class="nav-item rounded '.(($page == 'song')?'alert-primary':"").'">
+                        <a class="nav-link text-dark" href="list-song.php">Song</a>
+                    </li>
+                </ul>
+            ';
+        } else {
+            echo '
+            <ul class="navbar-nav mr-auto"></ul>            
+            
+            ';
+        }
+    
+    ?>
+
         <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Lagu,artis,genre" aria-label="Search">
-        <button class="btn alert-primary my-2 my-sm-0" type="submit">Cari</button>
+            <input class="form-control mr-sm-2" type="text" placeholder="Lagu,artis,genre" aria-label="Search">
+            <button class="btn alert-primary my-2 my-sm-0" type="submit">Cari</button>
         </form>
-</div>
+    </div>
 </nav> <br>

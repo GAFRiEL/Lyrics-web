@@ -1,3 +1,9 @@
+.bg-image {
+    background-image: url("asset/unsplash-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
 a {
     text-decoration: none;
 }
@@ -24,4 +30,9 @@ a {
 
 .card {
     border: none;
+}
+
+.custom-width-logo {
+    width: 48px;
+    height: auto;
 }
