@@ -7,8 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- icon -->
     <link rel="shortcut icon" href="asset/title-logo.png" type="image/x-icon">
-    <title>Lyrics | Web</title>
+
+    <!-- title -->
+    <title>Lyrics Web <?php  ?></title>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -54,9 +57,9 @@
     
     ?>
 
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Lagu,artis,genre" aria-label="Search">
-            <button class="btn alert-primary my-2 my-sm-0" type="submit">Cari</button>
+        <form action="list-search.php" class="form-inline my-2 my-lg-0" method="GET">
+            <input class="form-control mr-sm-2" type="text" placeholder="Lagu" aria-label="Search" name="cari">
+            <input class="btn alert-primary my-2 my-sm-0" type="submit" value="cari">
         </form>
     </div>
 </nav> <br>

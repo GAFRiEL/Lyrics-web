@@ -1,6 +1,7 @@
 <?php 
+$home = 'about';
 $page = 'about';
-include('main_header.php');
+include('header.php');
 ?>
     <div class="container">
 

@@ -2,8 +2,7 @@
 $home = 'page';
 $page = 'artist';
 include('header.php'); ?>
-<br>
-<br>
+<br> <br>
 
 <div class="container">
 
@@ -13,8 +12,7 @@ include('header.php'); ?>
 
         <?php
             $sql    =  "SELECT *
-                        FROM artist
-                        ORDER BY name ASC";
+                        FROM artist";
             $query  = mysqli_query($db, $sql);
 
             while($artist = mysqli_fetch_array($query)){

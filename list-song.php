@@ -2,8 +2,7 @@
 $home = 'page';
 $page = 'song';
 include('header.php') ?>
-<br>
-<br>
+<br> <br>
 
 <div class="container">
     <h1>Song List</h1>
@@ -12,11 +11,11 @@ include('header.php') ?>
         <tbody> 
         
             <?php
-                $sql    =  "SELECT artist.artist_id, artist.name, genre.genre_id, genre.genre, album.album_id, album.judul, song.id, song.title, song.lyrics, song.artist_id, song.album_id
+                $sql    =  'SELECT artist.artist_id, artist.name, genre.genre_id, genre.genre, album.album_id, album.judul, song.id, song.title, song.lyrics, song.artist_id, song.album_id
                             FROM song
                             LEFT JOIN artist ON song.artist_id = artist.artist_id
                             LEFT JOIN album ON song.album_id = album.album_id
-                            LEFT JOIN genre ON song.genre_id = genre.genre_id";
+                            LEFT JOIN genre ON song.genre_id = genre.genre_id';
                 $query  = mysqli_query($db, $sql);
                 $no     = 1;
 
@@ -30,17 +29,17 @@ include('header.php') ?>
                                         '.$song['title'].'
                                     </a>
                                 </h3>
-                                <a class="text-primary" href="#">
+                                <a class="text-primary" href="read-genre.php?id='.$song['genre_id'].'">
                                     '.$song['genre'].'
                                 </a>
                               </td>';
                         echo '<td class="">
                                 <h3>
-                                    <a class="text-dark" href="#">
+                                    <a class="text-dark" href="read-artist.php?id='.$song['artist_id'].'">
                                         '.$song['name'].'
                                     </a>
                                 </h3>
-                                <a class="text-primary" href="#">
+                                <a class="text-primary" href="read-album.php?id='.$song['album_id'].'">
                                     '.$song['judul'].'
                                 </a>
                               </td>';

@@ -2,8 +2,7 @@
 $home = 'page';
 $page = 'genre';
 include('header.php') ?>
-<br>
-<br>
+<br> <br>
 
     <div class="container">
         <div class="row justify-content-center">
@@ -13,8 +12,12 @@ include('header.php') ?>
 
                 while($genre = mysqli_fetch_array($query)){
                     echo '
-                        <div class="col-md-3">
-                            <span class="btn w-100 m-3 alert-primary"><a class="text-decoration-none" href="#">'.$genre['genre'].'</a></span>
+                        <div class="col-12 col-sm-6 col-md-3 m-4">
+                            <div class="card m-1 alert-primary">
+                                <a href="read-genre.php?id='.$genre['genre_id'].'" class="btn btn-primary shadow rounded-0">
+                                    '.$genre['genre'].'
+                                </a>
+                            </div>
                         </div>
                     ';
                 }

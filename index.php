@@ -52,5 +52,4 @@ include('header.php');
     </div>
 </main>
 
-
 <?php include('main_footer.php') ?>    
