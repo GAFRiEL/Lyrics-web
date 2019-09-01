@@ -12,7 +12,7 @@ include('header.php'); ?>
 
         <?php
             $sql    =  "SELECT *
-                        FROM artist";
+                        FROM artists";
             $query  = mysqli_query($db, $sql);
 
             while($artist = mysqli_fetch_array($query)){

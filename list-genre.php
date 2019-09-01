@@ -7,7 +7,7 @@ include('header.php') ?>
     <div class="container">
         <div class="row justify-content-center">
             <?php
-                $sql    = "SELECT * FROM genre ORDER BY genre ASC";
+                $sql    = "SELECT * FROM genres ORDER BY genre ASC";
                 $query  = mysqli_query($db, $sql);
 
                 while($genre = mysqli_fetch_array($query)){

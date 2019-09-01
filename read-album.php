@@ -9,9 +9,9 @@ if (!isset($_GET['id']) ){
 
 $id = $_GET['id'];
 
-$sql        =  "SELECT * FROM song
+$sql        =  "SELECT * FROM songs
                 WHERE album_id = $id";
-$sql2       =  "SELECT * FROM album
+$sql2       =  "SELECT * FROM albums
                 WHERE album_id = $id";
 
 $query      = mysqli_query($db, $sql);

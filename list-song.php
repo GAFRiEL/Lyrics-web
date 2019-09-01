@@ -11,11 +11,11 @@ include('header.php') ?>
         <tbody> 
         
             <?php
-                $sql    =  'SELECT artist.artist_id, artist.name, genre.genre_id, genre.genre, album.album_id, album.judul, song.id, song.title, song.lyrics, song.artist_id, song.album_id
-                            FROM song
-                            LEFT JOIN artist ON song.artist_id = artist.artist_id
-                            LEFT JOIN album ON song.album_id = album.album_id
-                            LEFT JOIN genre ON song.genre_id = genre.genre_id';
+                $sql    =  'SELECT artists.artist_id, artists.name, genres.genre_id, genres.genre, albums.album_id, albums.judul, songs.id, songs.title, songs.lyrics, songs.artist_id, songs.album_id
+                            FROM songs
+                            LEFT JOIN artists ON songs.artist_id = artists.artist_id
+                            LEFT JOIN albums ON songs.album_id = albums.album_id
+                            LEFT JOIN genres ON songs.genre_id = genres.genre_id';
                 $query  = mysqli_query($db, $sql);
                 $no     = 1;
 

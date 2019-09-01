@@ -10,10 +10,10 @@ if (!isset($_GET['id']) ){
 $id = $_GET['id'];
 
 $sql        =  "SELECT *
-                FROM artist
+                FROM artists
                 WHERE artist_id=$id";
 $sql2       =  "SELECT *
-                FROM song
+                FROM songs
                 WHERE artist_id=$id";
 
 $query      = mysqli_query($db, $sql);
@@ -22,7 +22,7 @@ $query2     = mysqli_query($db, $sql2);
 $artist     = mysqli_fetch_assoc($query);
 
 ?>
-
+<?php if ($artist < 0) { ?>
 <input type="hidden" name="id" value="<?php echo $artist['AI'] ?>" />
 
 <div class="container">
@@ -43,5 +43,13 @@ $artist     = mysqli_fetch_assoc($query);
         <?php } ?>
     </ul>
 </div>
+<?php } else { ?>
+
+<div class="container">
+    <h2 class="text-dark"><?php echo $artist['name']; ?></h2> <br>
+    <h3 class="text-dark alert-primary">Lagu tidak di temukan</h3>
+</div>
+
+<?php } ?>
 
 <?php include('main_footer.php') ?>

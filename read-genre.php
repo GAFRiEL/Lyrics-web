@@ -9,8 +9,8 @@ if (!isset($_GET['id']) ){
 
 $id = $_GET['id'];
 
-$sql        =  "SELECT * FROM genre WHERE genre_id = $id";
-$sql2       =  "SELECT * FROM song WHERE genre_id = $id";
+$sql        =  "SELECT * FROM genres WHERE genre_id = $id";
+$sql2       =  "SELECT * FROM songs WHERE genre_id = $id";
 $query      = mysqli_query($db, $sql);
 $query2      = mysqli_query($db, $sql2);
 $genre      = mysqli_fetch_assoc($query);

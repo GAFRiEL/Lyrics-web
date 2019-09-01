@@ -28,7 +28,7 @@ include('header.php');
                 $data = mysqli_query("SELECT * FROM song");		
             }
             
-            if (mysql_num_rows($data) > 0 ) {
+            if ($data > 0 ) {
                 while ($row = mysql_fetch_array($data)) {
             ?>
 
